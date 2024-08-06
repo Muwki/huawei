@@ -1,0 +1,4 @@
+Display board serialnumber
+display board serial-number (frameid/slotnr)
+--
+display alarm history alarmid 0x…………
