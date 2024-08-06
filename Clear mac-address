@@ -1,0 +1,3 @@
+Clear mac-address:
+Gponsolution-MA5683T#config
+Gponsolution-MA5683T(config)#undo mac-address mac 000c-29b9-3331 vlan 1501
