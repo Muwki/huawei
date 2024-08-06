@@ -4,3 +4,6 @@ display mac-address service-port 12
 display mac-address port 0/5/0
 display mac-address all
 display mac-address all | include 000c-29b9-3331
+
+View ARP address:
+display arp all
