@@ -1,0 +1,19 @@
+Example view various statistics:
+display board 0
+display board 0/5
+display cpu 0/5
+display resource
+display security config
+display temperature
+display gpon statistics ethernet 0/5 0
+MA5608T MCUD card GE0 upstream port info:
+MA5608T#config
+MA5608T(config)#interface mcu 0/2
+MA5608T(config-if-mcu-0/2)#display port ddm-info 0
+MA5608T(config-if-mcu-0/2)#display port traffic 0
+
+MA5683T SCUN Card GE0 upstream port info:
+MA5683T#config
+MA5683T(config)#interface scu 0/8
+MA5683T(config-if-scu-0/8)#display port ddm-info 0
+MA5683T(config-if-scu-0/8)#display port traffic 0
