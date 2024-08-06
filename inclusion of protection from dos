@@ -1,0 +1,7 @@
+An example of the inclusion of protection from dos:
+display security anti-dos control-packet rate 0/5/0
+display security dos-blacklist all
+Including other protection:
+display log security
+display security config
+display security conflict
