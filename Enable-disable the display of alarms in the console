@@ -1,0 +1,7 @@
+Enable-disable the display of alarms in the console:
+Enable / disable the display of alarms in the console:
+alarm output all
+undo alarm output all
+Setting and viewing logs:
+display log all (History of entered commands of all users)
+display log cli (CLI users)
