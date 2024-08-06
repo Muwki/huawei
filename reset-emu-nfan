@@ -1,0 +1,7 @@
+reset emu en fan
+
+Display emu
+
+interface emu x (x is emu ID)
+huawei(config-if-emu-x)#reset
+Are you sure to reset this EMU?(y/n)[n]:y
