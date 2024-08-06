@@ -1,0 +1,9 @@
+Viewing of the current configuration in which the specified section:
+display current-configuration | section vlan
+display current-configuration | section gpon
+display current-configuration | section btv
+display current-configuration | section device
+display current-configuration | section post
+display current-configuration | section abs
+display current-configuration | section public
+display current-configuration | section global
