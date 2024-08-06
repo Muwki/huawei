@@ -1,0 +1,9 @@
+When connecting the broken SFP can see information on it such as active alarms:
+display alarm active all
+Time info:
+display time
+display timezone
+display time dst
+display time time-stamp
+display time-range
+display ntp-service
