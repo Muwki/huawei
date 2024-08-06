@@ -1,0 +1,7 @@
+View the current OLT version & patch:
+display version
+display patch all
+View the current configuration:
+display current-configuration
+Save Configuration:
+save
