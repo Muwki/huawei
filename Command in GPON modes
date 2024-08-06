@@ -1,0 +1,27 @@
+Command in GPON modes:
+interface gpon x/x
+display ont alarm-profile ONT alarm profile
+display ont alarm-state ONT alarm state
+display ont autofind Automatically found ONT
+display ont capability ONT capability
+display ont config-capability ONT configuration capability set the oNT ont the info display information
+display ont ipconfig the oNT configuration the IP
+display mac-count ont the mAC count
+display ont mg the MG interface
+display ont optical-alarm-profile the Optical alarm profile
+display ont optical-the info Information Part about the the ONT optical transceiver
+display ont port port command group
+display ont potsport the POTS port of the type
+display ont register-the info the ONT register information for for last 10 Times
+display ont snmp-profile the oNT the sNMP profile
+display ont snmp-route the sNMP route
+display ont traffic the oNT realtime traffic
+display ont version the oNTversion information
+display ont of voip a VOIP service,
+display ont info-port ddm the ddm Port informationn
+display the info Port port information
+display ont port optical alarm-profile Optical alarm profile
+display ont port state Port state
+display sippstnuser SIPPSTNUSER
+display statistics statistics command group
+display unbound gemport Unbound GEM-Port configuration command group
