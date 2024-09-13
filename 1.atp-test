@@ -12,10 +12,10 @@ cable tussen mter en olt , van mtr na ont; groen nr blw
   service board reset: 
   rechtsklik een board en klik reset en  volgn dat ht weer opkomt. (moet weer groen worden)
 4 backup & load data;
- ga op de olt , in menu kies maintantance, back n restore, naam olt zoekn, klik backup,
+ ga op de olt , in menu kies maintantance, ne backup n restore, naam olt intoetsen in search,klik find next, klik backup,
  als  backup is gedaan (backup succeeded), reload backup via reload tap.
  (reload hoeft niet echt)
- omdat 1 het system voor 15 uitvalt en restart
+ omdat: 1 het system voor 15 uitvalt en restart
  2 bij installatie er al een backup en reload is gedaan.
  bij backup de datum plaatsen.
 
