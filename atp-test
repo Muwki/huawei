@@ -1,0 +1,41 @@
+atp testn
+cable tussen mter en olt , van mtr na ont; groen nr blw
+1 powr test 10%
+
+2 automatically find and confirm service board.
+  procedure;
+  delete  service board:
+  rechtklik op en board om te deleten, confirm board als t weer blauw is gewordn.
+
+3 check if a board can return to normal state after reset
+  procedure
+  service board reset: 
+  rechtsklik een board en klik reset en  volgn dat ht weer opkomt. (moet weer groen worden)
+4 backup & load data;
+ ga op de olt , in menu kies maintantance, back n restore, naam olt zoekn, klik backup,
+ als  backup is gedaan (backup succeeded), reload backup via reload tap.
+ (reload hoeft niet echt)
+ omdat 1 het system voor 15 uitvalt en restart
+ 2 bij installatie er al een backup en reload is gedaan.
+ bij backup de datum plaatsen.
+
+5 verify function of interconnecting with nce
+  interconnectie is via nce inlogn op olt en checken als je commands kan uitvoeren
+
+6 verify autoswitching bij optical fiber failure
+  procedure;
+  om de beurt de uplink van de controle board eruit haln tijdens een call en controleren dat 
+  de call actief blijft en dat er alarms zijn in nce. doe dat van active naar stanby board. 
+  Nadat de uplink terug is gezet in de alarms weg zijn zelfde procedure uitvoeren bij de andere 
+  board. hier mag de call op blijven omdat je achter elkaar beide boards gelijk checkt en duurt 
+  maar min.    
+
+7 verify function of confirming automatic ont discovery 
+  dit hoeft niet omdat rs dit al doet voor dat ze hun testen uitvoeren
+
+8 active / standby switch over of the controle board
+ procedure; tijdens een active call de controle boards resetten , eerst active dan de    
+ standby. het duurt ongeveer 15 voordat de board weer opkomt dus hier is de controle om na te 
+ gaan als de call active blijft bij de reset en switchover daarna mag de call verbroken worden.
+
+9 & 10 verify HSI en GPON test, deze worden door R&S gedaan.
