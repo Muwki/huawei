@@ -1,7 +1,7 @@
 atp testn
 cable tussen mter en olt , van mtr na olt; groen nr blw
 1 powr test 10%
-
+  op 1490 dBm
 2 automatically find and confirm service board.
   procedure;
   delete  service board:
