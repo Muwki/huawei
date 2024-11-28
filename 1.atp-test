@@ -6,34 +6,36 @@ cable tussen mter en olt , van mtr na olt; groen nr blw
   procedure;
   delete  service board:
   rechtklik op en board om te deleten, confirm board als t weer blauw is gewordn.
-
+-----------------------------------
 3 check if a board can return to normal state after reset
   procedure
   service board reset: 
   rechtsklik een board en klik reset en  volgn dat ht weer opkomt. (moet weer groen worden)
+----------------------------------
 4 backup & load data;
  ga op de olt , in menu kies maintantance, ne backup n restoration, 
 naam olt intoetsen in search,klik find next, klik backup, daarna start
 eerst database backup daarna config backup, 
  type backup kies je bij de dropdwnmenu in de popup window.
 als backups zijn gedaan (backup succeeded),
-------------
+---
 dubbel check als data backup terug te vinden is.
 klik op een ander file om te deslectern, daarna klik j weer op d site naam om te selectrn
 en dubbl check j d backup info beneden, info sectie groter maken.
------
+---
 die backup kun je downloaden om anytime weer te uploaden.
 download door te rechtsklikken op de file en save optie te kiezen.
-------
+---
 reload backup via reload tap. (optioneel)
  (reload hoeft niet echt)
- omdat: 1 het system voor 15 uitvalt en restart
+ omdat:
+ 1 het system voor 15 uitvalt en restart
  2 bij installatie er al een backup en reload is gedaan.
- bij backup de datum plaatsen.
-
+  bij backup de datum plaatsen.
+------------------------------
 5 verify function of interconnecting with nce
   interconnectie is via nce inlogn op olt en checken als je commands kan uitvoeren
-
+------------------------------------
 6 verify autoswitching bij optical fiber failure
   procedure;
   om de beurt de uplink van de controle board eruit haln tijdens een call en controleren dat 
@@ -41,10 +43,10 @@ reload backup via reload tap. (optioneel)
   Nadat de uplink terug is gezet in de alarms weg zijn zelfde procedure uitvoeren bij de andere 
   board. hier mag de call op blijven omdat je achter elkaar beide boards gelijk checkt en duurt 
   maar min.    
-
+----------------------
 7 verify function of confirming automatic ont discovery 
   dit hoeft niet omdat rs dit al doet voor dat ze hun testen uitvoeren
----
+--
 but just incase doe je dat via gpon management in je linker panel
 gpon oni port tab bovenkant, select dan een active port
 bij onu info aan de onderkant zie je de gerigistreerde ont
@@ -53,10 +55,9 @@ bij onrigistered zie je ont die niet gereigistreerd zijn,
 automatich worden geidentificeerd en geregistreerd worden.
 ze moeten van ongeregistreerde kant overgaan naar de geregistreerde kant.
 --------------------------
-
 8 active / standby switch over of the controle board
  procedure; tijdens een active call de controle boards resetten , eerst active dan de    
  standby. het duurt ongeveer 15 voordat de board weer opkomt dus hier is de controle om na te 
  gaan als de call active blijft bij de reset en switchover daarna mag de call verbroken worden.
-
+--------------------------------
 9 & 10 verify HSI en GPON test, deze worden door R&S gedaan.
