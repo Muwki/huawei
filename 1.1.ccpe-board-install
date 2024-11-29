@@ -1,0 +1,42 @@
+Nieuwe CCPE-board installatie
+
+1 fysieke install;
+Plates los schroeven, Board plaatsen en vast schroeven.
+
+2confirm :  
+In nce/U2000 : MSAN-cabinet - rechterklik op nieuwe kaart -
+click confirm
+
+3 deactivate VDSL ports ;
+click linkerkant op DSL optie
+click VDSL2Port
+find 0 x 0      x is port nieuwe board
+select all ports
+rechterclick , click deactivate
+
+4 ASL ;
+click linkerkant op ASL
+click op POTS Port
+find;een eerdere board om de'MG ID'te achterhalen (meestal 0)
+find; de nieuwe board #  - select all ports
+rechterclick select ; configure attribute
+Operation Type ; MG ID --> Field Value = 0 (meestal)
+apply 
+OK
+
+5 Main Topology  --> check als board groen OK is
+
+6 backup ;
+links boven icon device management  
+click Data Management
+click Backup Data 
+Backup Database
+Backup Configuration file,
+end .
+
+Of 
+
+7.
+Plates los schroeven, Board plaatsen en vast schroeven.
+Dts bellen om te confirmen, (de 6 stappen hier boven uit te voeren).
+Mdf blok koppelen.
