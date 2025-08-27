@@ -1,0 +1,25 @@
+
+Hierbij de stappen voor de emu config.
+
+Step 1: Login to device through CLI.
+
+Step 2: Run the following commands to go in to Config mode and view the EMU
+
+MA5600T: enable
+MA5600T: Config
+MA5600T(config): Display EMU 0 (the output below will be received)
+
+
+Step3: Identify the which EMU is for the FAN and which EMU is for SMU (EMU 0 is for SMU and EMU 1 is for fan)
+
+Step 4: Delete the EMU with the following commands
+
+MA5600T(config): emu del 0
+MA5600T(config): emu del 1
+ 
+
+Step 5: run the following commands to add the EMU back in the OLT
+
+MA5600T(config): emu add 0 SMU 00
+MA5600T(config): emu add 1 FAN 0 0
+Step6: Save the configuration by running the save command.
