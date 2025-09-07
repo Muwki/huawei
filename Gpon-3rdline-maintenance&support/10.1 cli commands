@@ -1,0 +1,6 @@
+log on to olt
+enable
+config
+interface
+0/..
+dan bn j op een specifieke board
