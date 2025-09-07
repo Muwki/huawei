@@ -4,3 +4,5 @@ config
 interface
 0/..
 dan bn j op een specifieke board
+display ont info 0 all
+geeft de ont info van port 0 van de specifieke board of slot.
