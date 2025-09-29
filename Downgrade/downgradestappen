@@ -1,6 +1,9 @@
 Downgrade stappen
 rechtsklik op board en daarna portview en check de status van de porten.
 deactive 1 port, van waar is weggehaald
-grijs is deactive
-rood is activated offine
+poort kleuren:
+groen activated online (activated met patch connected)
+rood is activated offine (geen connected patch)
+grijs is deactive offline (port is deactive)
+paars is activated sfp not pressent
 na de swap de andere port deactiveren en de alarms clearen
