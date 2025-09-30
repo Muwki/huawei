@@ -6,3 +6,6 @@ interface
 dan bn j op een specifieke board
 display ont info 0 all
 geeft de ont info van port 0 van de specifieke board of slot.
+
+alternatief
+ont info 0 enter slot nr en dan port id of all
