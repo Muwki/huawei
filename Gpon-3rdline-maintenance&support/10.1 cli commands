@@ -2,6 +2,7 @@ log on to olt
 enable
 config
 interface
+gpon 
 0/..
 dan bn j op een specifieke board
 display ont info 0 all
