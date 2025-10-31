@@ -9,7 +9,7 @@ display ont ipconfig the oNT configuration the IP
 display mac-count ont the mAC count
 display ont mg the MG interface
 display ont optical-alarm-profile the Optical alarm profile
-display ont optical-the info Information Part about the the ONT optical transceiver
+display ont optical info -the Information Part about the the ONT optical transceiver
 display ont port port command group
 display ont potsport the POTS port of the type
 display ont register-the info the ONT register information for for last 10 Times
