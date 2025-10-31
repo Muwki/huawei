@@ -17,7 +17,7 @@ display ont snmp-profile the oNT the sNMP profile
 display ont snmp-route the sNMP route
 display ont traffic the oNT realtime traffic
 display ont version the oNTversion information
-display ont of voip a VOIP service,
+display ont  voip a VOIP service,
 display ont info-port ddm the ddm Port informationn
 display the info Port port information
 display ont port optical alarm-profile Optical alarm profile
