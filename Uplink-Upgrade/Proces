@@ -9,4 +9,32 @@ data & config backup
 voor dat de uplink op de olt wordt geupgrade
 eerst een data en config backup maken.
 -
-verv
+first disable backup and save policy
+in nce via menu --> maintenance-->NE Backup policy management
+via --> dropdwn menu - alltype of specific msan type, select de msan
+rechtklik en disable vervolgens dan backup policy en save policy
+
+backup database (before)
+in nce via menu --> maintenance-->NE data backup/restoration
+in de lijst de msan zoeken, of oproepen via find optie,
+select de msan, klik backup, in de dropdown menu bij content select database
+check dat het 100% wordt voltooid.
+
+backup config-file
+doe het zelfde als bij backup database maar dan select config-file
+
+ga naar backup information en zoek de backups die recent gemaakt zijn
+met rechtmuis klik database en config file exporeren. (save as)
+--
+upgrade proces starten
+according to the config steps, zie cli commands
+
+backup database (after)
+na afronding werkzaamheden weer een backup maken
+zelfde stappen als eerder
+ook hier de backups exporteren
+--
+vervolgens backup & save policy reenablen.
+zelfde stappen als bij disable maar dan enable selecteren.
+--
+vervolgens nodige testen uitvoeren.
