@@ -1,0 +1,12 @@
+De uplink wordt eerst in orde gemaakt door nom-d&ts,
+fm&i doet de patching op de switch indien de uplink via de switch gaat.
+--
+Indien het een piggy-back situatie; uplink via ander olt.
+dan moet de uplink dan eerst in orde gemaakt worden op de olt.
+door huawei/sm&i
+---
+data & config backup
+voor dat de uplink op de olt wordt geupgrade
+eerst een data en config backup maken.
+-
+verv
