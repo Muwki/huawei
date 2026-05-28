@@ -1,0 +1,25 @@
+Step 1: Disconnect thethe patches connecting from TGK0B to TGK0A.
+Step 2: connect the patches between the TGK0B and the switch
+using the uplink ports 0/9/0 and 0/10/0 on TGK0A.
+
+Step 1: Login to the OLT TGK0A through console cable
+Step 2: Remove the VLAN and link aggragation from the 
+uplink port using the following commands:
+TGK0A: undo port vlan 101-3200 0/19 0
+TGK0A: undo port vlan 100-2841 0/20 0
+TGK0A: undo link-aggregation all
+
+Step 3: Add the vlans back to the uplink port and build
+the link aggregation using the following commands.
+TGK0A: port vlan 101 0/9 0
+TGK0A: port vlan 505 0/9 0
+TGK0A: port vlan 1405 0/9 0
+TGK0A: port vlan 2003 0/9 0
+TGK0A: port vlan 2099 0/9 0
+TGK0A: port vlan 2782 0/9 0
+TGK0A: port vlan 2882 0/9 0
+TGK0A: port vlan 3200 0/9 0
+TGK0A: link-aggregation 0/9 0 egress-ingress workmode lacp-static 
+TGK0A: link-aggregation add-member 0/9/0 0/10 0
+Step 4: Check if the uplink ports on the OLT are back online.
+ 
