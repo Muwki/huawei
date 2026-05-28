@@ -22,4 +22,9 @@ TGK0A: port vlan 3200 0/9 0
 TGK0A: link-aggregation 0/9 0 egress-ingress workmode lacp-static 
 TGK0A: link-aggregation add-member 0/9/0 0/10 0
 Step 4: Check if the uplink ports on the OLT are back online.
+
+test after rollback
+Step 1: Log into the OLT through CLI
+Step 2: Run the ping command to the NCE IP.
+ 
  
