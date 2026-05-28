@@ -1,0 +1,50 @@
+Step 1: Login to the OLT through TGK0B console cable
+Step 2: Insert 10G SFP module in the port 0/3/1 and port 0/4/1
+Step 3: Set the port that will be used on the OLT TGK0B 
+for the uplink of TGK0A to cascade. use the following commands:
+TGK0B: Interface mpu 0/3
+TGK0B: network-role 1 cascade 
+TGK0B: quit
+TGK0B: Interface mpu 0/4
+TGK0B: network-role 1 cascade 
+TGK0B: quit
+
+Step 4: add the vlans of TGK0A to the cascaded ports 
+and the uplink port, using the following commands.
+TGK0B: vlan 101 smart
+TGK0B: vlan 505 smart
+TGK0B: vlan 1405 smart
+TGK0B: vlan 2099 smart
+TGK0B: vlan 2782 smart
+TGK0B: vlan 2882 smart
+TGK0B: vlan 3200 smart
+TGK0B: vlan desc 101 description "FTTC Internet"
+TGK0B: vlan desc 505 description "H248 VOIP"
+TGK0B: vlan desc 1405 description "CBB_TGK_Biza_DIGN1194_375175"
+TGK0B: vlan desc 2099 description "TELESUR-SV_DIGN2385"
+TGK0B: vlan desc 2782 description "TGK0A_FTTH_HSI"
+TGK0B: vlan desc 2882 description "TGK0A_FTTH_SIP"
+TGK0B: vlan desc 3200 description "FTTC-TGK0A-HIS"
+TGK0B: port vlan 101 0/3 1
+TGK0B: port vlan 505 0/3 1
+TGK0B: port vlan 1405 0/3 1
+TGK0B: port vlan 2003 0/3 1
+TGK0B: port vlan 2099 0/3 1
+TGK0B: port vlan 2782 0/3 1
+TGK0B: port vlan 2882 0/3 1
+TGK0B: port vlan 3200 0/3 1
+TGK0B: link-aggregation 0/3 1 egress-ingress workmode lacp-static 
+TGK0B: link-aggregation add-member 0/3/1 0/4 1
+
+Step 5: Add the Vlans of TGK0A to the uplinkport 
+of TGK0B using the following commands.
+TGK0B: port vlan 101 0/3 0
+TGK0B: port vlan 505 0/3 0
+TGK0B: port vlan 1405 0/3 0
+TGK0B: port vlan 2099 0/3 0
+TGK0B: port vlan 2782 0/3 0
+TGK0B: port vlan 2882 0/3 0
+TGK0B: port vlan 3200 0/3 0
+
+Step 6 : Connect the fiber patches from TGK0A to TGK0B.
+Like seen in the picture below.
