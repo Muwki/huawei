@@ -1,0 +1,19 @@
+Step 1: Install the two X2CS boards in slot 0/19 and 0/20 
+with 10G SFP in port 0/19/0 and 0/20/0 and add the boards to the system using the following commands:
+TGK0A: Display board 0
+TGK0A: Board confrim 0
+Step 2: Remove the VLAN and link aggragation from the uplink port using the following commands.
+TGK0A: undo port vlan 101-3200 0/9 0
+TGK0A: undo link-aggregation all
+Step 3: Add the vlans back to the uplink port primary port and build the link aggregation using the following commands.
+TGK0A: port vlan 101 0/19 0
+TGK0A: port vlan 505 0/19 0
+TGK0A: port vlan 2003 0/19 0
+TGK0A: port vlan 2782 0/19 0
+TGK0A: port vlan 2882 0/19 0
+TGK0A: port vlan 3200 0/19 0
+TGK0A: link-aggregation 0/19 0 egress-ingress workmode lacp-static 
+TGK0A: link-aggregation add-member 0/19/0 0/20 0
+
+ping test with nce 
+ping 10.102.12.2
