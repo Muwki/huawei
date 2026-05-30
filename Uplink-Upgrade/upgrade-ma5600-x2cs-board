@@ -1,5 +1,7 @@
 Step 1: Install the two X2CS boards in slot 0/19 and 0/20 
-with 10G SFP in port 0/19/0 and 0/20/0 and add the boards to the system using the following commands:
+with 10G SFP in port 0/19/0 and 0/20/0 and
+connect to the olt via console via the active board
+add the boards to the system using the following commands:
 TGK0A: Display board 0
 TGK0A: Board confrim 0
 Step 2: Remove the VLAN and link aggragation from the uplink port using the following commands.
