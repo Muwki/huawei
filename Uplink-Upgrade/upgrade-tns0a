@@ -1,0 +1,30 @@
+logon to olt via console
+
+en
+conf
+set idle timeout (20)
+
+TNS0A: undo port vlan 101-3267 0/19 0
+TNS0A: undo link-aggregation 0/19/0
+TNS0A: board delete 0/19
+TNS0A: board delete 0/20
+TNS0A: display board 0
+TNS0A: Board confirm 0
+TNS0A: port vlan 101 0/19 0
+TNS0A: port vlan 505 0/19 0
+TNS0A: port vlan 804 0/19 0
+TNS0A: port vlan 1146 0/19 0
+TNS0A: port vlan 2000 0/19 0
+TNS0A: port vlan 2007 0/19 0
+TNS0A: port vlan 2222 0/19 0
+TNS0A: port vlan 2338 0/19 0
+TNS0A: port vlan 2339 0/19 0
+TNS0A: port vlan 2340 0/19 0
+TNS0A: port vlan 2783 0/19 0
+TNS0A: port vlan 2883 0/19 0
+TNS0A: port vlan 3267 0/19 0
+TNS0A: link-aggregation 0/19 0 egress-ingress workmode lacp-static 
+TNS0A: link-aggregation add-member 0/19/0 0/20 0
+
+ping test
+ping -c 50 10.102.12.2
