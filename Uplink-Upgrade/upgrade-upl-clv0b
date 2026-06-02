@@ -1,0 +1,85 @@
+logon via console
+CLV0B>enable
+
+CLV0B#config
+
+CLV0B(config)#idle-timeout 20
+
+CLV0B(config)#undo port vlan 100-2841 0/8 0
+  Warning: The operation may cause interruptions of many user services!
+  It will take several minutes, and console may be timeout, please use command
+idle-timeout to set time limit
+  Are you sure to delete standard port(s)? (y/n)[n]:y
+  
+CLV0B(config)#undo port vlan 100-2841 0/9 0
+
+CLV0B(config)#undo link-aggregation  all
+
+CLV0B(config)#interface mpu 0/8
+
+CLV0B(config-if-mpu-0/8)#auto-neg 0 disable
+
+CLV0B(config-if-mpu-0/8)#speed 0 10000
+
+CLV0B(config-if-mpu-0/8)#quit
+CLV0B(config)#interface mpu 0/9
+CLV0B(config-if-mpu-0/9)#speed 0 10000
+CLV0B(config-if-mpu-0/9)#quit
+CLV0B(config)#port vlan 100 0/8 0
+CLV0B(config)#port vlan 1601 0/8 0
+CLV0B(config)#port vlan 2001 0/8 0
+CLV0B(config)#port vlan 2741 0/8 0
+CLV0B(config)#port vlan 2841 0/8 0
+CLV0B(config)#link-aggregation 0/8 0 egress-ingress workmode lacp-static
+CLV0B(config)#link-aggregation add-member 0/8/0 0/9 0
+{ <cr>|frameid/slotid<S><Length 3-15> }:
+
+  Command:
+          link-aggregation add-member 0/8/0 0/9 0
+
+CLV0B(config)#ping 10.102.12.2
+{ <cr>|ip-forwarding<K> }:
+
+  Command:
+          ping 10.102.12.2
+  PING 10.102.12.2: 56  data bytes, press CTRL_C to break
+    Reply from 10.102.12.2: bytes=56 Sequence=1 ttl=61 time=11 ms
+    Reply from 10.102.12.2: bytes=56 Sequence=2 ttl=61 time=6 ms
+    Reply from 10.102.12.2: bytes=56 Sequence=3 ttl=61 time=8 ms
+    Reply from 10.102.12.2: bytes=56 Sequence=4 ttl=61 time=8 ms
+    Reply from 10.102.12.2: bytes=56 Sequence=5 ttl=61 time=9 ms
+
+  --- 10.102.12.2 ping statistics ---
+    5 packet(s) transmitted
+    5 packet(s) received
+    0.00% packet loss
+    round-trip min/avg/max = 6/8/11 ms
+
+CLV0B(config)#ping 10.102.12.2
+{ <cr>|ip-forwarding<K> }:
+
+ 
+CLV0B(config)#ping -c 10 10.102.12.2
+{ <cr>|ip-forwarding<K> }:
+
+  Command:
+          ping -c 10 10.102.12.2
+  PING 10.102.12.2: 56  data bytes, press CTRL_C to break
+    Reply from 10.102.12.2: bytes=56 Sequence=1 ttl=61 time=4 ms
+    Reply from 10.102.12.2: bytes=56 Sequence=2 ttl=61 time=4 ms
+    Reply from 10.102.12.2: bytes=56 Sequence=3 ttl=61 time=8 ms
+    Reply from 10.102.12.2: bytes=56 Sequence=4 ttl=61 time=8 ms
+    Reply from 10.102.12.2: bytes=56 Sequence=5 ttl=61 time=8 ms
+    Reply from 10.102.12.2: bytes=56 Sequence=6 ttl=61 time=4 ms
+    Reply from 10.102.12.2: bytes=56 Sequence=7 ttl=61 time=5 ms
+    Reply from 10.102.12.2: bytes=56 Sequence=8 ttl=61 time=4 ms
+    Reply from 10.102.12.2: bytes=56 Sequence=9 ttl=61 time=4 ms
+    Reply from 10.102.12.2: bytes=56 Sequence=10 ttl=61 time=4 ms
+
+  --- 10.102.12.2 ping statistics ---
+    10 packet(s) transmitted
+    10 packet(s) received
+    0.00% packet loss
+    round-trip min/avg/max = 4/5/8 ms
+
+CLV0B(config)#quit
