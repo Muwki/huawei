@@ -1,0 +1,13 @@
+login
+enable
+config
+
+-undo vlan on port
+undo port vlan 100-2841 0/9 0
+
+-undo lag 
+undo link-aggregation  all
+
+-set vlan on port
+port vlan 100 0/8 0
+
