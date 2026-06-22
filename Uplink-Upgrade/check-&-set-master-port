@@ -1,0 +1,33 @@
+enable-mode
+display link-aggregation all
+
+or
+display link-aggregation summary
+
+or
+show lacp neighbor
+----
+
+check port specifik
+display link-aggregation 0/8/0 vb
+
+set master port
+link-aggregation 0/8 0 egress-ingress workmode lacp-static
+
+The Peer Device MUST Match
+This is the #1 reason LACP fails when adding members. 
+The device on the other end of the cables (the peer switch/router) 
+must have the exact same number of ports added to its corresponding LACP LAG.
+If your switch has 4 ports in the LAG, but the peer switch only has 3 ports in its LAG, 
+the LACP negotiation will fail, and the ports will likely be suspended or blocked.
+
+Port Configuration Must Be Identical
+All member ports in the LAG must have the exact same configuration. 
+Before adding a new port, ensure it matches the existing members in:
+-Speed and Duplex: (e.g., all must be 10Gbps Full-Duplex. 
+  LACP will not bundle a 1G port with a 10G port).
+-VLANs: The allowed VLANs, native VLAN (PVID),
+  and VLAN tagging modes must be identical.
+-MTU: The Maximum Transmission Unit size must match.
+-Other settings: Flow control, link debounce, 
+ and QoS policies should be identical.
