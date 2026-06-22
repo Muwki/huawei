@@ -14,6 +14,10 @@ display link-aggregation 0/8/0 vb
 set master port
 link-aggregation 0/8 0 egress-ingress workmode lacp-static
 
+add member to master
+link-aggregation add-member 0/8/0 0/9 0 vb
+---
+
 The Peer Device MUST Match
 This is the #1 reason LACP fails when adding members. 
 The device on the other end of the cables (the peer switch/router) 
