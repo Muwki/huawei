@@ -1,0 +1,22 @@
+login
+en
+conf
+
+check port vlan
+display port vlan 0/8/0
+
+check device vlan
+display vlan
+
+check vlan details
+display vlan 100
+
+Check Service-Port Mappings (Crucial for OLTs
+display service-port all
+
+check mappings for a specific VLAN:
+display service-port vlan 100
+
+
+
+
