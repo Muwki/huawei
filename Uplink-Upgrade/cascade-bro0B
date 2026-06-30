@@ -1,0 +1,96 @@
+////Step 1: upgrade the uplink of BR0B from 4X1G to 2X10G ==> 
+///Complete activity for BRO0B first then implement changes on BRO01
+
+BRO0B:undo port vlan 644-2869 0/3 0
+
+BRO0B:undo link-aggregation all
+
+BRO0B:interface mpu 0/3
+
+BRO0B:auto-neg 0 disable
+
+BRO0B:speed 0 10000
+
+BRO0B:auto-neg 1 disable
+
+BRO0B:speed 1 10000
+
+BRO0B:quit
+
+BRO0B:interface mpu 0/4
+
+BRO0B:auto-neg 0 disable
+
+BRO0B:speed 0 10000
+
+BRO0B:auto-neg 1 disable
+
+BRO0B:speed 1 10000
+
+BRO0B:quit
+
+
+BRO0B:port vlan 644 0/3 0
+
+BRO0B:port vlan 645 0/3 0
+
+BRO0B:port vlan 2000 0/3 0
+
+BRO0B:port vlan 2002 0/3 0
+
+BRO0B:port vlan 2769 0/3 0
+
+BRO0B:port vlan 2869 0/3 0
+
+BRO0B:link-aggregation 0/3 0 egress-ingress workmode lacp-static 
+
+BRO0B:link-aggregation add-member 0/3/0 0/4 0
+
+/// ping to NCE for connection test verification
+
+/// Step 2 Verify that all the service on BRO0B 
+///are working before starting any activity with BRO01
+
+/// Step 3 Make the Cascade Configuration on BRO0B
+
+Login into NCE and disable the Uplink port 0/3/1 and 0/4/1 
+
+BRO0B:Interface mpu 0/3
+
+BRO0B:network-role 1 cascade 
+
+BRO0B:quit
+
+BRO0B:Interface mpu 0/4
+
+BRO0B:network-role 1 cascade 
+
+BRO0B:quit
+
+BRO0B:vlan 2770 smart
+
+BRO0B:vlan 2870 smart
+
+BRO0B:vlan desc 2770 description "BRO01_FTTH_HSI"
+
+BRO0B:vlan desc 2870 description "BRO01_FTTH_SIP"
+
+BRO0B:port vlan 2000 0/3 1
+
+BRO0B:port vlan 2002 0/3 1
+
+BRO0B:port vlan 2770 0/3 1
+
+BRO0B:port vlan 2870 0/3 1
+
+BRO0B:link-aggregation 0/3 1 egress-ingress workmode lacp-static 
+
+BRO0B:link-aggregation add-member 0/3/1 0/4 1
+
+BRO0B:port vlan 2770 0/3 0
+
+BRO0B:port vlan 2870 0/3 0
+
+//// Step 4 connect the patches to the port 0/3/1 and port 0/4/1 and then start the uplink upgrade of BRO01.
+//// Step 5 after the uplink upgrade of BRO01 is completed activate the disabled ports BRO0B. 
+///First activate the port 0/3/1 check if OLT BRO01 is online and then after 2min activate the port 0/4/1.
