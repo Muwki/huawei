@@ -1,0 +1,41 @@
+
+// Step 1 After the activities of BRO0B then start with the uplink upgrade of BRO01
+// create a backup before proceeding with config steps
+
+BRO01:undo port vlan 2000-2870 0/3 0
+
+BRO01:undo link-aggregation all
+
+BRO01:interface mpu 0/3
+
+BRO01:auto-neg 0 disable
+
+BRO01:speed 0 10000
+
+BRO01:quit
+
+BRO01:interface mpu 0/4
+
+BRO01:auto-neg 0 disable
+
+BRO01:speed 0 10000
+
+BRO01:quit
+
+BRO01:port vlan 2000 0/3 0
+
+BRO01:port vlan 2002 0/3 0
+
+BRO01:port vlan 2770 0/3 0
+
+BRO01:port vlan 2870 0/3 0
+
+BRO01:link-aggregation 0/3 0 egress-ingress workmode lacp-static 
+
+BRO01:link-aggregation add-member 0/3/0 0/4 0
+
+/// Step 2 after one of the uplink port have been activated on the OLT BRO0B, 
+ping the NMS through the BRO01 to verify the connection verification.
+check connectivity with ping 10.102.12.
+
+after all is ok please synch olt en config
