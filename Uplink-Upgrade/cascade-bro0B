@@ -95,3 +95,4 @@ BRO0B:port vlan 2870 0/3 0
 //// Step 4 connect the patches to the port 0/3/1 and port 0/4/1 and then start the uplink upgrade of BRO01.
 //// Step 5 after the uplink upgrade of BRO01 is completed activate the disabled ports BRO0B. 
 ///First activate the port 0/3/1 check if OLT BRO01 is online and then after 2min activate the port 0/4/1.
+// after al config en test synch olt
