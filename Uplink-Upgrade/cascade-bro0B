@@ -1,5 +1,6 @@
 ////Step 1: upgrade the uplink of BR0B from 4X1G to 2X10G ==> 
 ///Complete activity for BRO0B first then implement changes on BRO01
+// first make a backup
 
 BRO0B:undo port vlan 644-2869 0/3 0
 
