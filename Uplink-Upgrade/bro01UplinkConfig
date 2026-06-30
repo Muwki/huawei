@@ -2,6 +2,13 @@
 // Step 1 After the activities of BRO0B then start with the uplink upgrade of BRO01
 // create a backup before proceeding with config steps
 
+connect console
+
+logon
+en
+conf
+BRO01:idle-timeout 20
+
 BRO01:undo port vlan 2000-2870 0/3 0
 
 BRO01:undo link-aggregation all
