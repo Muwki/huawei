@@ -6,6 +6,7 @@ sw to config mode
 Step 2: Insert 10G SFP module in the port 0/3/1 and port 0/4/1
 Step 3: Set the port that will be used on the OLT 0C
 as the uplink of 0D to cascade. use the following commands:
+
 Interface mpu 0/3
 network-role 1 cascade 
 quit
@@ -17,7 +18,7 @@ quit
 Step 4: add the vlans of 0D to the cascaded ports 
 and the uplink port, using the following commands.
 
-vlan 2000 smart
+vlan 2000 smart******
 vlan 2714 smart
 vlan 2814 smart
 
