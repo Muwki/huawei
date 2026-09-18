@@ -18,11 +18,15 @@ quit
 Step 4: add the vlans of 0D to the cascaded ports 
 and the uplink port, using the following commands.
 
-vlan 2000 smart******
+the vlans of 0D are:
+"FTTH SIP voice" 2814  smart
+"FTTH internet"  2714  smart
+"Management"     2000  standaard
+
 vlan 2714 smart
 vlan 2814 smart
 
-vlan desc 2000 description "Management"
+(vlan desc 2000 description "Management")
 vlan desc 2714 description "FTTH Internet"
 vlan desc 2814 description "FTTH SIP voice"
 
