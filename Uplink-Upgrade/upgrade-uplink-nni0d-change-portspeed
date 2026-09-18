@@ -1,0 +1,92 @@
+
+#Before start make sure policys are disabled and backups are created.
+when finished create backups again and reenable the policy's.
+-------
+"FTTH SIP voice" 2814
+"FTTH internet"  2714
+"Management"     2000
+------
+logon via console
+>enable
+
+#config
+
+(config)#idle-timeout 20
+
+check vlans
+display vlan all or
+display port vlan 0/9/0 etc
+
+(config)#undo port vlan 2000-2814 0/9 0
+
+  Warning: The operation may cause interruptions of many user services!
+  It will take several minutes, and console may be timeout, please use command
+idle-timeout to set time limit
+  Are you sure to delete standard port(s)? (y/n)[n]:y
+
+#vlan kan in bulk worden verwijderd maar worden 1 voor 1 aan port toegevoegd
+  
+(config)#undo port vlan 2000-2814 0/9 0
+
+(config)#undo link-aggregation  all
+
+(config)#interface mpu 0/9
+
+(config-if-mpu-0/9)#auto-neg 0 disable
+
+(config-if-mpu-0/9)#speed 0 10000
+
+(config-if-mpu-0/9)#quit
+(config)#interface mpu 0/9
+(config-if-mpu-0/9)#speed 0 10000
+(config-if-mpu-0/9)#quit
+
+(config)#port vlan 2000 0/9 0
+(config)#port vlan 2714 0/9 0
+(config)#port vlan 2814 0/9 0
+(config)#link-aggregation 0/9 0 egress-ingress workmode lacp-static
+(config)#link-aggregation add-member 0/9/0 0/10 0
+{ <cr>|frameid/slotid<S><Length 3-15> }:
+
+  Command:
+          link-aggregation add-member 0/9/0 0/10 0
+
+(config)#ping 10.102.12.2         --normal
+{ <cr>|ip-forwarding<K> }:
+
+  Command:
+          ping 10.102.12.2
+  PING 10.102.12.2: 56  data bytes, press CTRL_C to break
+    Reply from 10.102.12.2: bytes=56 Sequence=1 ttl=61 time=11 ms
+    Reply from 10.102.12.2: bytes=56 Sequence=2 ttl=61 time=6 ms
+    Reply from 10.102.12.2: bytes=56 Sequence=3 ttl=61 time=8 ms
+    Reply from 10.102.12.2: bytes=56 Sequence=4 ttl=61 time=8 ms
+    Reply from 10.102.12.2: bytes=56 Sequence=5 ttl=61 time=9 ms
+
+  --- 10.102.12.2 ping statistics ---
+    5 packet(s) transmitted
+    5 packet(s) received
+    0.00% packet loss
+    round-trip min/avg/max = 6/8/11 ms
+
+CLV0B(config)#ping 10.102.12.2
+{ <cr>|ip-forwarding<K> }:
+
+ 
+CLV0B(config)#ping -c 10 10.102.12.2
+{ <cr>|ip-forwarding<K> }:
+
+  Command:
+          ping -c 10 10.102.12.2   continous
+  PING 10.102.12.2: 56  data bytes, press CTRL_C to break
+    Reply from 10.102.12.2: bytes=56 Sequence=1 ttl=61 time=4 ms
+    Reply from 10.102.12.2: bytes=56 Sequence=2 ttl=61 time=4 ms
+    Reply from 10.102.12.2: bytes=56 Sequence=3 ttl=61 time=8 ms
+    
+  --- 10.102.12.2 ping statistics ---
+    10 packet(s) transmitted
+    10 packet(s) received
+    0.00% packet loss
+    round-trip min/avg/max = 4/5/8 ms
+
+CLV0B(config)#quit
