@@ -90,3 +90,5 @@ CLV0B(config)#ping -c 10 10.102.12.2
     round-trip min/avg/max = 4/5/8 ms
 
 CLV0B(config)#quit
+
+after all config en all is ok please synch olt en config
