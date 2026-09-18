@@ -1,3 +1,5 @@
+*disable policy's en create backups before
+after, enable policy en create backup.
 
 Step 1: Login to the OLT 0C through  console cable
 sw to config mode
@@ -39,3 +41,5 @@ of 0C using the following commands.
 
 Step 6 : Connect the fiber patches from 0D to 0C.
 Like seen in the picture below.
+
+after all config en all is ok please synch olt en config
