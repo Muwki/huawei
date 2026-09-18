@@ -2,11 +2,11 @@ login
 en
 conf
 
-check port vlan
-display port vlan 0/8/0
-
 check device vlan
 display vlan
+
+check port vlan
+display port vlan 0/8/0
 
 check vlan details
 display vlan 100
